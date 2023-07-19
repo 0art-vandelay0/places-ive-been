@@ -10,24 +10,24 @@
         crossorigin="anonymous">
     </head>
     <body>
-        @using Template.Models;
+        @using Places.Models;
 
         @if (Model.Count == 0)
         {
-            <p>There are no items in the list.</p>
+            <p>There are no destinations in the list.</p>
         }
         <ul>
-            @foreach (Item item in Model)
+            @foreach (Destination destination in Model)
             {
-                @* <li>@item.Description</li> *@
-                <li><a href='/items/@item.Id'>@item.Description</a></li>
+                @* <li>@destination.Description</li> *@
+                <li><a href='/destinations/@destination.Id'>@destination.CityName</a></li>
             }
         </ul>
-        <form action="/items/delete" method="post">
-            <button type="submit" name="button">Clear All Items</button>
+        <form action="/destinations/delete" method="post">
+            <button type="submit" name="button">Clear All destinations</button>
         </form>
         <br>
         <br>
-        <a href="/items/new">Add a new item.</a>
+        <a href="/destinations/new">Add a new destination.</a>
     </body>
 </html>
