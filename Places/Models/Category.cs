@@ -30,5 +30,9 @@ namespace Places.Models
         {
             return _instances[searchId - 1];
         }
+        public void AddDestination(Destination destination)
+        {
+            Destinations.Add(destination);
+        }
     }
 }

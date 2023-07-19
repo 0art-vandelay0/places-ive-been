@@ -80,5 +80,24 @@ namespace Places.Tests
             //Assert
             Assert.AreEqual(newCategory2, result);
         }
+
+        [TestMethod]
+        public void AddDestination_AssociatesDestinationWithCategory_DestinationList()
+        {
+            //Arrange
+            string cityName = "Amsterdam";
+            string description = "Walk the dog.";
+            Destination newDestination = new Destination(cityName, description);
+            List<Destination> newList = new List<Destination> { newDestination };
+            string name = "Work";
+            Category newCategory = new Category(name);
+            newCategory.AddDestination(newDestination);
+
+            //Act
+            List<Destination> result = newCategory.Destinations;
+
+            //Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
     }
 }
