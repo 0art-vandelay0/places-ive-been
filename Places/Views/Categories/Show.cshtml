@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+    @using Places.Models;
+
+    <h3>Here are all the destinations in this category:</h3>
+
+    <ol>
+        @foreach (Destination destination in @Model["destinations"])
+        {
+            <li><a href='/categories/@Model["category"].Id/destinations/@destination.Id'>@destination.CityName</a></li>
+        }
+    </ol>
+
+    <p><a href='/categories/@Model["category"].Id/destinations/new'>Add a new destination</a></p>
+    <p><a href='/categories'>Return to category list</a></p>
+    <p><a href='/'>Return to Main Page</a></p>
