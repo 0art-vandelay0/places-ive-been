@@ -11,5 +11,11 @@ namespace Places.Controllers
             return View();
         }
 
+        [Route("/favorite_photos")]
+        public ActionResult FavoritePhotos()
+        {
+            return View();
+        }
+
     }
 }
